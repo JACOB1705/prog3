@@ -19,4 +19,29 @@ public class Ordenamiento {
             }
         }
     
+      public static void ordenamientoInsercion(double[] arreglo) {
+        for (int i = 1; i < arreglo.length; i++) {
+            double actual = arreglo[i];
+            int j = i-1;
+            while (j >= 0 && arreglo[j] > actual) {
+                arreglo[j+1] = arreglo[j];
+                j--;
+            }
+            arreglo[j+1] = actual;
+        }
+    }
+    
+      public static void ordenamientoSeleccion(double[] arreglo) {
+        for (int i = 0; i < arreglo.length-1; i++) {
+            int minIndex = i;
+            for (int j = i+1; j < arreglo.length; j++) {
+                if (arreglo[j] < arreglo[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            double temp = arreglo[i];
+            arreglo[i] = arreglo[minIndex];
+            arreglo[minIndex] = temp;
+        }
+    }
 }
