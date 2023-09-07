@@ -3,8 +3,37 @@ import java.util.Random;
 
 public class Ordenamiento {
     public static void main(String[] args) {
-         int[] size = {100, 500, 1000, 5000, 10000};
+         int[] sizes = {100, 500, 1000, 5000, 10000};
          
+        for (int size : sizes) {
+            double[] arreglo = generarArregloAleatorio(size);
+            
+            double[] copiaBurbuja = arreglo.clone();
+            long inicioBurbuja = System.currentTimeMillis();
+            ordenamientoBurbuja(copiaBurbuja);
+            long finBurbuja = System.currentTimeMillis();
+            
+            double[] copiaInsercion = arreglo.clone();
+            long inicioInsercion = System.currentTimeMillis();
+            ordenamientoInsercion(copiaInsercion);
+            long finInsercion = System.currentTimeMillis();
+            
+            double[] copiaSeleccion = arreglo.clone();
+            long inicioSeleccion = System.currentTimeMillis();
+            ordenamientoSeleccion(copiaSeleccion);
+            long finSeleccion = System.currentTimeMillis();
+            
+            double[] copiaMerge = arreglo.clone();
+            long inicioMerge = System.currentTimeMillis();
+            ordenamientoMergeSort(copiaMerge, 0, copiaMerge.length-1);
+            long finMerge = System.currentTimeMillis();
+            
+            System.out.printf("Tamaño: %d%n", size);
+            System.out.printf("Burbuja: %d ms%n", finBurbuja-inicioBurbuja);
+            System.out.printf("Inserción: %d ms%n", finInsercion-inicioInsercion);
+            System.out.printf("Selección: %d ms%n", finSeleccion-inicioSeleccion);
+            System.out.printf("Mergesort: %d ms%n%n", finMerge-inicioMerge);
+        } 
     }
   
     public static void ordenamientoBurbuja(double[] arreglo) {
