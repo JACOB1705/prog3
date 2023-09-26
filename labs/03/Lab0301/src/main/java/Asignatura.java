@@ -32,8 +32,5 @@ public class Asignatura {
         return horario;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%-7d  %-35s%5d%7s", codigo, nombre, num_creditos, horario);
-    }
+ 
 }
