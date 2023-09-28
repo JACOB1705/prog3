@@ -1,7 +1,9 @@
 
 import java.util.List;
 import java.util.Scanner;
-
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
 
 /**
  *
@@ -74,6 +76,28 @@ public class Lab0301 {
         }
     }
 
+public static void lec_archivo() {
+        FileReader archi;
+        BufferedReader lector;
+        String mensaje = "", lec;
+
+        try {
+            archi = new FileReader("C:\\Users\\Jacobo\\Documents\\NetBeansProjects\\Lab0301\\data\\Asignaturas.txt");
+            if (archi.ready()) {
+                lector = new BufferedReader(archi);
+
+                while ((lec = lector.readLine()) != null) {
+                    mensaje = mensaje + lec + "\n";
+                }
+            } else {
+                System.out.println("El archivo no esta listo para ser leido");
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println(mensaje);
+    }
 
     
 }
