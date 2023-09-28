@@ -1,3 +1,8 @@
+
+/**
+ *
+ * @author Jacobo
+ */
 import java.util.Scanner;
 
 public class Entrada {
@@ -12,4 +17,8 @@ public class Entrada {
         System.out.println(mss);
         return input.nextLine();
     }
+    
+     public static void correcion(){
+         input.nextLine();
+     }
 }
