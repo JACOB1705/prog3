@@ -112,6 +112,11 @@ public class GraficaU extends javax.swing.JFrame {
         botongrafica.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         botongrafica.setForeground(new java.awt.Color(255, 255, 255));
         botongrafica.setText("Graficar");
+        botongrafica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botongraficaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -183,6 +188,38 @@ public class GraficaU extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botongraficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botongraficaActionPerformed
+        // TODO add your handling code here:
+        int[] aux = lectura.departamentoele();
+        
+        DefaultCategoryDataset datos = new DefaultCategoryDataset();
+        
+        if(BOGOTA.isSelected()){
+        datos.setValue(aux[0], "BOGOTA", "Departamentos");
+        } if(CALDAS.isSelected()){
+        datos.setValue(aux[1], "CALDAS", "Departamentos");
+        }if(ANTIOQUIA.isSelected()){
+        datos.setValue(aux[2], "ANTIOQUIA", "Departamentos");
+        }if(CAUCA.isSelected()){
+        datos.setValue(aux[3], "CAUCA","Departamentos");
+        }if(TOLIMA.isSelected()){
+        datos.setValue(aux[4], "TOLIMA","Departamentos");
+        }if(SANTANDER.isSelected()){
+        datos.setValue(aux[5], "SANTANDER","Departamentos");
+        }
+        
+         JFreeChart barras = ChartFactory.createBarChart("Matriculados", "Universidad", "Departamento", datos, PlotOrientation.VERTICAL, true, true, false);
+        ChartPanel panel2 = new ChartPanel(barras);
+        panel2.setMouseWheelEnabled(true);
+        
+        jPanel2.setLayout(new BorderLayout());
+        jPanel2.add(panel2, BorderLayout.NORTH);
+        pack();
+        repaint();
+        
+        
+    }//GEN-LAST:event_botongraficaActionPerformed
 
     /**
      * @param args the command line arguments
