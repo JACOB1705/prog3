@@ -16,8 +16,8 @@ public class LecData {
         try (Scanner scanner = new Scanner(new File("datos.txt"))) {
             while (scanner.hasNextLine()) {
                 String[] datosUniversidad = scanner.nextLine().split(",");
-                if (datosUniversidad.length >= 10) { 
-                    Universidad universidad = new Universidad(Integer.parseInt(datosUniversidad[1]), datosUniversidad[2], datosUniversidad[3]);
+                if (datosUniversidad.length >= 3) { 
+                    Universidad universidad = new Universidad(Integer.parseInt(datosUniversidad[2]), datosUniversidad[0], datosUniversidad[1]);
                     universidades.add(universidad);
                     System.out.println(datosUniversidad[1]+"a");
                 } else {
