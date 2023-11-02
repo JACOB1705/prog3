@@ -30,3 +30,29 @@ public class LecData {
             System.out.println("Error al leer el archivo de departamentos: " + e.getMessage());
         }
     }
+ public int[] departamentoele(){
+        int aux[] = new int [6];
+        int i=0;
+        while (i<universidades.size()){
+            Universidad temp = universidades.get(i);
+            switch (temp.Departamento){
+                case "BOGOTA D.C.":   aux[0]+=1;
+                                break;
+                case "CALDAS" :    aux[1]+=1;
+                                    break;
+                case "ANTIOQUIA":    aux[2]+=1;
+                                        break;
+                case "CAUCA":  aux[3]+=1;
+                                        break;
+                case "TOLIMA":  aux[4]+=1;
+                                    break;
+                case "SANTANDER":  aux[5]+=1;
+                                break;
+                default:    System.out.println("Error: La region "+temp.Departamento+" no esta dentro de las posibles.");
+                            break;
+            }
+            i++;
+        }
+        return aux;
+    }
+}
