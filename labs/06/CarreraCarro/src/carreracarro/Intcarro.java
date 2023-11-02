@@ -17,6 +17,25 @@ public class Intcarro extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JLabel getcarro1(){
+        return carro1;
+    }
+    
+    public JLabel getcarro2(){
+        return carro2;
+    }
+    
+    public JLabel getcarro3(){
+        return carro3;
+    }
+    
+    public JLabel getcarro4(){
+        return carro4;
+    }
+    
+     public JLabel getmeta(){
+        return meta;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,7 +52,7 @@ public class Intcarro extends javax.swing.JFrame {
         carro4 = new javax.swing.JLabel();
         meta = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        botoninicio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,14 +105,14 @@ public class Intcarro extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         jLabel1.setText("CARRERA");
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Comenzar Carrera");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botoninicio.setBackground(new java.awt.Color(51, 51, 51));
+        botoninicio.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        botoninicio.setForeground(new java.awt.Color(255, 255, 255));
+        botoninicio.setText("Comenzar Carrera");
+        botoninicio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botoninicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botoninicioActionPerformed(evt);
             }
         });
 
@@ -111,7 +130,7 @@ public class Intcarro extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botoninicio, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(506, 506, 506))
         );
         layout.setVerticalGroup(
@@ -122,16 +141,16 @@ public class Intcarro extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botoninicio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botoninicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botoninicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botoninicioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,11 +188,11 @@ public class Intcarro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botoninicio;
     private javax.swing.JLabel carro1;
     private javax.swing.JLabel carro2;
     private javax.swing.JLabel carro3;
     private javax.swing.JLabel carro4;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel meta;

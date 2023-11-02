@@ -4,10 +4,19 @@
  */
 package carreracarro;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Estudiante
  */
-public class Carrera {
+public class Carrera extends Thread{
+    private JLabel con;
+    private Intcarro i;
+    
+    public Carrera(JLabel con,Intcarro i){
+        this.con=con;
+        this.i=i;
+    }
     
 }
