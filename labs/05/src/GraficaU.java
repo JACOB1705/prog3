@@ -218,7 +218,35 @@ public class GraficaU extends javax.swing.JFrame {
         pack();
         repaint();
         
+         float n = aux[0]+aux[1]+aux[2]+aux[3]+aux[4]+aux[5];
+        DefaultPieDataset datos1 = new DefaultPieDataset();
+        if(BOGOTA.isSelected()){
+        datos1.setValue("BOGOTA ("+(aux[0]/n)*100+"%)", aux[0]);
+        }if(CALDAS.isSelected()){
+        datos1.setValue("CALDAS ("+(aux[1]/n)*100+"%)", aux[1]);
+        }if(ANTIOQUIA.isSelected()){
+        datos1.setValue("ANTIOQUIA ("+(aux[2]/n)*100+"%)", aux[2]);
+        }if(CAUCA.isSelected()){
+        datos1.setValue("CAUCA ("+(aux[3]/n)*100+"%)", aux[3]);
+        }if(TOLIMA.isSelected()){
+        datos1.setValue("TOLIMA ("+(aux[4]/n)*100+"%)", aux[4]);
+        }if(SANTANDER.isSelected()){
+        datos1.setValue("SANTANDER ("+(aux[5]/n)*100+"%)", aux[5]);
+        }
+      
+         JFreeChart pastel = ChartFactory.createPieChart("Matriculados por departamentos", datos1, true, true, false);
+         ChartPanel panel_temporal = new ChartPanel(pastel);
+        panel_temporal.setMouseWheelEnabled(true);
+
+        jPanel3.setLayout(new BorderLayout());
+        jPanel3.add(panel_temporal, BorderLayout.NORTH);
+
+        pack();
+        repaint();
         
+        generado=true;
+        barrasexp=barras;
+        pastelexp=pastel;
     }//GEN-LAST:event_botongraficaActionPerformed
 
     /**
