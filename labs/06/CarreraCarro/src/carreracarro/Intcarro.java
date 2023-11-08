@@ -154,8 +154,20 @@ public class Intcarro extends javax.swing.JFrame {
     
     private void botoninicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botoninicioActionPerformed
         // TODO add your handling code here:
-        System.out.println(carro1.getLocation().x);
-        System.out.println(meta.getLocation().x);
+        carro1.setLocation(0,carro1.getLocation().y);
+          carro2.setLocation(0,carro2.getLocation().y);
+           carro3.setLocation(0,carro3.getLocation().y);
+          carro4.setLocation(0,carro4.getLocation().y);
+          
+          Carrera carr1 = new Carrera(carro1, this);
+          Carrera carr2 = new Carrera(carro2, this);
+          Carrera carr3 = new Carrera(carro3, this);
+          Carrera carr4 = new Carrera(carro4, this);
+          
+          carr1.start();
+          carr2.start();
+          carr3.start();
+          carr4.start();
     }//GEN-LAST:event_botoninicioActionPerformed
 
     /**

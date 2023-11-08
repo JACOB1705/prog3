@@ -5,6 +5,7 @@
 package carreracarro;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -25,10 +26,10 @@ public class Carrera extends Thread{
     @Override
     public void run(){
         
-        int carro1;
-        int carro2;
-        int carro3;
-        int carro4;
+        int carro1 = 0;
+        int carro2 = 0;
+        int carro3 = 0;
+        int carro4 = 0;
         
         while (true){
             try{
@@ -36,14 +37,33 @@ public class Carrera extends Thread{
                 sleep((int)(Math.random()*1000));
                 carro1 = carro.getCarro1().getLocation().x;
                 carro2 = carro.getCarro2().getLocation().x;
+                carro3 = carro.getCarro3().getLocation().x;
+                carro4 = carro.getCarro4().getLocation().x;
                 
-                if(carro1 < carro.getMeta().getLocation().x - 200){
-                    
+                if(carro2 < carro.getMeta().getLocation().x - 125 && carro1 < carro.getMeta().getLocation().x - 125 ){
+                    tag.setLocation(tag.getLocation().x + 10, tag.getLocation().y );
+                    carro.repaint();
+                }else{
+                    break;
                 }
                 
             }catch(InterruptedException e){
                 System.out.println(e);
             }
+             if(tag.getLocation().x >= 200-carro.getMeta().getLocation().x ) {
+                if (carro2 < carro1 && carro3 < carro1 && carro4 < carro1) {
+                  JOptionPane.showMessageDialog(null,"Gano el primer carro");
+                
+                } else if(carro2 > carro1 && carro3< carro2 && carro4<carro2) {
+                    JOptionPane.showMessageDialog(null,"Gano el segundo carro");
+                } else if (carro3>carro1 && carro3>carro2 && carro3>carro4){
+                    JOptionPane.showMessageDialog(null,"Gano el tercer carro");
+                }else if (carro4>carro1 && carro4>carro2 && carro4>carro3){
+                    JOptionPane.showMessageDialog(null,"Gano el cuarto carro");
+             }else {
+                    JOptionPane.showMessageDialog(null,"La carrera termino en empate");
+                }
+             }
         }
     }
 }
