@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,7 +10,19 @@ public class TragaMonedas extends javax.swing.JFrame {
      * Creates new form TragaMonedas
      */
     public TragaMonedas() {
-        initComponents();
+       initComponents();
+        a = new Proceso(Ranura1.getSize());        
+        
+        Ranura1.repaint();   
+        b = new Proceso(Ranura2.getSize());        
+        
+        Ranura2.repaint(); 
+        c = new Proceso(Ranura3.getSize());        
+        
+        Ranura3.repaint();   
+        d = new Proceso(Ranura4.getSize());        
+        
+        Ranura4.repaint(); 
     }
 
     /**
@@ -30,7 +39,7 @@ public class TragaMonedas extends javax.swing.JFrame {
         Ranura2 = new javax.swing.JLabel();
         Ranura3 = new javax.swing.JLabel();
         Ranura4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        girar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,8 +54,13 @@ public class TragaMonedas extends javax.swing.JFrame {
 
         Ranura4.setText("jLabel1");
 
-        jButton1.setBackground(new java.awt.Color(255, 102, 102));
-        jButton1.setText("jButton1");
+        girar.setBackground(new java.awt.Color(255, 102, 102));
+        girar.setText("jButton1");
+        girar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                girarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,7 +79,7 @@ public class TragaMonedas extends javax.swing.JFrame {
                         .addComponent(Ranura4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(girar, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(300, 300, 300))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -78,7 +92,7 @@ public class TragaMonedas extends javax.swing.JFrame {
                     .addComponent(Ranura3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Ranura4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(girar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
@@ -96,9 +110,18 @@ public class TragaMonedas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void girarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_girarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_girarActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    Proceso a ; 
+    Proceso b ;
+    Proceso c ; 
+    Proceso d ;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -136,7 +159,7 @@ public class TragaMonedas extends javax.swing.JFrame {
     private javax.swing.JLabel Ranura2;
     private javax.swing.JLabel Ranura3;
     private javax.swing.JLabel Ranura4;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton girar;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

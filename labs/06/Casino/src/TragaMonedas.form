@@ -62,7 +62,7 @@
                           <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jButton1" min="-2" pref="246" max="-2" attributes="0"/>
+                          <Component id="girar" min="-2" pref="246" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -80,7 +80,7 @@
                       <Component id="Ranura4" alignment="3" min="-2" pref="168" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="girar" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace pref="81" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -107,13 +107,16 @@
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="girar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="girarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
