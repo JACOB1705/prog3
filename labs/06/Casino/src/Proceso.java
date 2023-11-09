@@ -8,7 +8,7 @@ import java.util.TimerTask;
  *
  * @author Jacobo
  */
-public class Proceso {
+public class Proceso extends javax.swing.JLabel{
     private Timer tiempo ;
     private TimerTask task;
     private int speed = 60;
@@ -32,7 +32,43 @@ public class Proceso {
         this.speed= v;        
     }
   
-  
+  public void startAnimation() {    
+           run=true;
+           tiempo = new Timer();
+           task = new TimerTask() {               
+               public void run() {
+   
+                   frame++;                   
+                   if (frame<=9){
+                 
+                       
+                        setimage(frame);
+                   }
+                   else{frame=1;}
+               }
+           };
+           //se inicia la Proceso
+           System.out.println("Se inicio el proceso");                                             
+           tiempo.schedule(task,0,speed); 
+    }
+    
+     public void stopAnimation() {        
+        tiempo.cancel();
+        task.cancel();
+        run=false;
+        System.out.println("El proceso fue detenido");                                             
+    }
+
+    public void setim(int a) {
+        this.im = a;
+    }
+     
+
+    public int getIm() {
+        
+        return im;
+    }
+     
 }
 
 

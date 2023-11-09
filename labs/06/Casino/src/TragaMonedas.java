@@ -10,18 +10,18 @@ public class TragaMonedas extends javax.swing.JFrame {
      * Creates new form TragaMonedas
      */
     public TragaMonedas() {
-       initComponents();
+        initComponents();
         a = new Proceso(Ranura1.getSize());        
-        
+        Ranura1.add(a);
         Ranura1.repaint();   
         b = new Proceso(Ranura2.getSize());        
-        
+        Ranura2.add(b);
         Ranura2.repaint(); 
         c = new Proceso(Ranura3.getSize());        
-        
+        Ranura3.add(c);
         Ranura3.repaint();   
         d = new Proceso(Ranura4.getSize());        
-        
+        Ranura4.add(d);
         Ranura4.repaint(); 
     }
 
@@ -40,25 +40,34 @@ public class TragaMonedas extends javax.swing.JFrame {
         Ranura3 = new javax.swing.JLabel();
         Ranura4 = new javax.swing.JLabel();
         girar = new javax.swing.JButton();
+        premio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 204));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        Ranura1.setText("jLabel1");
+        Ranura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/icono1.jpg"))); // NOI18N
 
-        Ranura2.setText("jLabel1");
+        Ranura2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/icono2.jpg"))); // NOI18N
 
-        Ranura3.setText("jLabel1");
+        Ranura3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/icono3.jpg"))); // NOI18N
 
-        Ranura4.setText("jLabel1");
+        Ranura4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/icono4.jpg"))); // NOI18N
 
         girar.setBackground(new java.awt.Color(255, 102, 102));
-        girar.setText("jButton1");
+        girar.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        girar.setForeground(new java.awt.Color(255, 255, 255));
+        girar.setText("GIRAR");
         girar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 girarActionPerformed(evt);
+            }
+        });
+
+        premio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                premioActionPerformed(evt);
             }
         });
 
@@ -81,6 +90,10 @@ public class TragaMonedas extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(girar, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(300, 300, 300))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(388, 388, 388)
+                .addComponent(premio, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +106,9 @@ public class TragaMonedas extends javax.swing.JFrame {
                     .addComponent(Ranura4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(girar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(premio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -112,8 +127,29 @@ public class TragaMonedas extends javax.swing.JFrame {
 
     private void girarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_girarActionPerformed
         // TODO add your handling code here:
-        
+        if (girar.getText().equals("GIRAR")){
+            girar.setText("PARAR");
+            a.startAnimation(); d.startAnimation(); b.startAnimation(); c.startAnimation();
+            premio.setText("");
+        }
+        else
+        {
+            a.stopAnimation(); b.stopAnimation(); c.stopAnimation(); d.stopAnimation();
+            
+            if (a.getIm() == b.getIm() && b.getIm() == c.getIm() && c.getIm() == d.getIm()){
+                JOptionPane.showMessageDialog(null, "Felicidades has ganado");
+            }else{
+                JOptionPane.showMessageDialog(null, "Sigue intentando");
+            }
+           
+            
+            
+            girar.setText("GIRAR");
     }//GEN-LAST:event_girarActionPerformed
+    }
+    private void premioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_premioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_premioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,6 +158,7 @@ public class TragaMonedas extends javax.swing.JFrame {
     Proceso b ;
     Proceso c ; 
     Proceso d ;
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -161,5 +198,6 @@ public class TragaMonedas extends javax.swing.JFrame {
     private javax.swing.JLabel Ranura4;
     private javax.swing.JButton girar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField premio;
     // End of variables declaration//GEN-END:variables
 }
