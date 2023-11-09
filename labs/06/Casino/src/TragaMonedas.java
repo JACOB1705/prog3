@@ -11,6 +11,7 @@ public class TragaMonedas extends javax.swing.JFrame {
      */
     public TragaMonedas() {
         initComponents();
+        setLocationRelativeTo(null);
         a = new Proceso(Ranura1.getSize());        
         Ranura1.add(a);
         Ranura1.repaint();   
@@ -110,13 +111,13 @@ public class TragaMonedas extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(titulo)
                 .addGap(48, 48, 48)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Ranura1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Ranura3)
                     .addComponent(Ranura4)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Ranura2)
-                        .addGap(9, 9, 9)))
+                        .addGap(9, 9, 9))
+                    .addComponent(Ranura1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(girar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
