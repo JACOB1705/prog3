@@ -43,19 +43,25 @@ public class TragaMonedas extends javax.swing.JFrame {
         girar = new javax.swing.JButton();
         premio = new javax.swing.JTextField();
         titulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(102, 51, 255));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Ranura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/icono1.jpg"))); // NOI18N
+        jPanel1.add(Ranura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 184, -1, 135));
 
         Ranura2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/icono2.jpg"))); // NOI18N
+        jPanel1.add(Ranura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 184, -1, -1));
 
         Ranura3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/icono3.jpg"))); // NOI18N
+        jPanel1.add(Ranura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 184, -1, -1));
 
         Ranura4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/icono4.jpg"))); // NOI18N
+        jPanel1.add(Ranura4, new org.netbeans.lib.awtextra.AbsoluteConstraints(649, 184, 152, -1));
 
         girar.setBackground(new java.awt.Color(51, 153, 255));
         girar.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
@@ -66,6 +72,7 @@ public class TragaMonedas extends javax.swing.JFrame {
                 girarActionPerformed(evt);
             }
         });
+        jPanel1.add(girar, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 383, 246, 52));
 
         premio.setEditable(false);
         premio.setBackground(new java.awt.Color(102, 51, 255));
@@ -75,55 +82,13 @@ public class TragaMonedas extends javax.swing.JFrame {
                 premioActionPerformed(evt);
             }
         });
+        jPanel1.add(premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 462, 71, -1));
 
         titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/titulo.png"))); // NOI18N
+        jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 46, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(388, 388, 388)
-                .addComponent(premio, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(girar, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(300, 300, 300))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(titulo)
-                        .addGap(328, 328, 328))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Ranura1)
-                        .addGap(24, 24, 24)
-                        .addComponent(Ranura2)
-                        .addGap(26, 26, 26)
-                        .addComponent(Ranura3)
-                        .addGap(38, 38, 38)
-                        .addComponent(Ranura4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(titulo)
-                .addGap(48, 48, 48)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Ranura3)
-                    .addComponent(Ranura4)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Ranura2)
-                        .addGap(9, 9, 9))
-                    .addComponent(Ranura1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addComponent(girar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(premio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/fondo .jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 3, 848, 480));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,6 +176,7 @@ public class TragaMonedas extends javax.swing.JFrame {
     private javax.swing.JLabel Ranura3;
     private javax.swing.JLabel Ranura4;
     private javax.swing.JButton girar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField premio;
     private javax.swing.JLabel titulo;
